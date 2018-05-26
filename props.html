@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Vue JS Hello World</title>
+</head>
+<body>
+<div id="app">
+   <hello message="You need to signup to our website" ></hello>
+</div>
+<template id="hello-world" >
+  <div>
+    <h1>Hello World!</h1>
+    <p>
+      {{message}}
+    </p>
+  </div>
+</template>
+</body>
+<script src="vue.js"></script>
+<script type="text/javascript">
+Vue.component("hello",{
+  template: "#hello-world",
+  props: ["message"]
+});
+
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Hi this Vue JS!'
+  }
+})
+</script>
+</html>

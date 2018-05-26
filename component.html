@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> </title>
+</head>
+<style>
+ .color-red { color: red}
+ .is-loading { background: green}
+
+</style>
+<body>
+  <div id="root">
+    <hello></hello>
+
+
+  </div>
+  <template id="hello-world" >
+    <div>
+    <h1>Hello World!</h1>
+    <p> THis is the reason I fall in love with Vue</p>
+    </div>
+    </template>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script> -->
+  <script src="vue.js"></script>
+  <script>
+  Vue.component("hello",{
+template: "#hello-world"
+});
+  new Vue({
+    el: '#root',
+    data: {
+      
+
+    }
+
+    });
+
+
+</script>
+</body>
+</html>

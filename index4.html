@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> </title>
+</head>
+<style>
+ .color-red { color: red}
+ .is-loading { background: green}
+
+</style>
+<body>
+  <div id="root">
+
+    <!-- <h1 v-text="new Date()"></h1> -->
+    {{ reversedMessage }}
+    <h1> All Tasks</h1>
+    <ul>
+      <li v-for="task in tasks" v-text="task.description"></li>
+      
+    </ul>
+    <h1> Completed Tasks </h1>
+    <ul>
+        <li v-for="task in completedTasks" v-text="task.description"></li>
+      </ul>
+
+
+  </div>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script> -->
+  <script src="vue.js"></script>
+  <script>
+
+  var app = new Vue({
+    el: '#root',
+    data: {
+      message: 'Hello World',
+      tasks: [
+        { description: 'Go to the Store', completed: true },
+        { description: 'Meet a Bitch', completed: true },
+        { description: 'Buy her Gucci', completed: false },
+        { description: 'Take her Home', completed: true },
+        { description: 'Fuck her good', completed: false }
+      ]
+
+    },
+    computed: {
+      reversedMessage() {
+        return this.message.split('').reverse().join('');
+      },
+      completedTasks() {
+        return this.tasks.filter(task => task.completed);
+      }
+    }
+
+    });
+
+
+</script>
+</body>
+</html>
