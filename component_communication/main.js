@@ -14,9 +14,13 @@ Vue.component('coupon', {
 new Vue({
   el: '#root',
 
+  data: {
+    couponApplied: false
+  },
+
   methods: {
     onCouponApplied() {
-      alert('applied');
+      this.couponApplied = true;
     }
   }
 })
